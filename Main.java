@@ -1,9 +1,16 @@
 import java.lang.reflect.Array;
 
+
 class Tasks {
     //first group
     void greet(String name, int age) {
-        System.out.println("Hello, my name is " + name + " and I am " + age + " years old.");
+        StringBuilder message = new StringBuilder()
+                .append("Hello, my name is ")
+                .append(name)
+                .append(" and my age is ")
+                .append(age);
+        System.out.println(message.toString());
+
     }
 
     double fromFahrenheitToCelsius(double fahrenheit) {
@@ -12,23 +19,30 @@ class Tasks {
 
     void areaCalculator(int length, int width){
         int area = length * width;
-        System.out.println("The area of the rectangle is " + area);
+        String message = new StringBuilder()
+                .append("The area of the rectangle is ")
+                .append(area)
+                .toString();
+        System.out.println(message);
     }
 
     //second group
     boolean isEven(int number){
-        if(number % 2 == 0){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return number % 2 == 0;
     }
 
     //i did one so it could be applied to every number
     void multiplier(int num){
         for(int i = 1; i <= 10; i++){
-            System.out.println(num + " x " + i + " = " + num * i);
+            String message = new StringBuilder()
+                    .append(num)
+                    .append(" x ")
+                    .append(i)
+                    .append(" = ")
+                    .append(num * i)
+                    .toString();
+
+            System.out.println(message);
         }
     }
 
@@ -55,12 +69,7 @@ class Tasks {
    }
 
    void checkAge(int age) {
-        if(age < 18) {
-            System.out.println("Access denied");
-        }
-        else{
-            System.out.println("Access granted");
-        }
+       System.out.println((age < 18) ? "Access denied" : "Access granted");
    }
 
    int plusMethod(int a, int b){
@@ -83,5 +92,16 @@ class Tasks {
         }
    }
 
+   int maxIntegerAlternative(int a, int b, int c){
+       return ((a > b) && (a > c)) ? a : ((b > c) ? b : c);
+   }
+
 
 }
+
+
+
+
+    
+  
+   
